@@ -1,0 +1,198 @@
+{
+  "name": "cumqueut",
+  "//": "^ COMMENT OUT 'private: true' BEFORE RUNNING NPM PUBLISH",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "main": "dist/daily-iframe.js",
+  "module": "dist/daily-iframe-esm.js",
+  "types": "index.d.ts",
+  "files": "dist",
+  "unpkg": "dist/daily-iframe.js",
+  "browserslist": [
+    "defaults",
+    "chrome 61",
+    "ie >= 11"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-replace": "^2.3.2",
+    "@semantic-release/git": "^10.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^27.4.6",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-rewire": "^1.2.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "conventional-changelog-conventionalcommits": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "rollup": "^1.29.0",
+    "rollup-plugin-cjs-es": "^0.7.0",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.4",
+    "rollup-plugin-terser": "^4.0.4",
+    "semantic-release": "^19.0.3",
+    "ts-jest": "^27.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "bowser": "^2.8.1",
+    "dequal": "^2.0.3",
+    "events": "^3.1.0",
+    "fast-equals": "^1.6.3",
+    "lodash": "^4.17.15"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
+  },
+  "release": {
+    "branches": [
+      {
+        "name": "main",
+        "channel": "internal",
+        "prerelease": "internal"
+      },
+      {
+        "name": "daily-js-releases"
+      }
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits",
+          "releaseRules": [
+            {
+              "type": "*",
+              "release": false
+            },
+            {
+              "type": "fix",
+              "scope": "daily-js",
+              "release": "patch"
+            },
+            {
+              "type": "fix",
+              "scope": "dj",
+              "release": "patch"
+            },
+            {
+              "type": "fix",
+              "scope": "call-machine",
+              "release": "patch"
+            },
+            {
+              "type": "fix",
+              "scope": "cm",
+              "release": "patch"
+            },
+            {
+              "type": "feat",
+              "scope": "daily-js",
+              "release": "patch"
+            },
+            {
+              "type": "feat",
+              "scope": "dj",
+              "release": "patch"
+            },
+            {
+              "type": "feat",
+              "scope": "call-machine",
+              "release": "patch"
+            },
+            {
+              "type": "feat",
+              "scope": "cm",
+              "release": "patch"
+            },
+            {
+              "type": "improvement",
+              "scope": "daily-js",
+              "release": "patch"
+            },
+            {
+              "type": "improvement",
+              "scope": "dj",
+              "release": "patch"
+            },
+            {
+              "type": "improvement",
+              "scope": "call-machine",
+              "release": "patch"
+            },
+            {
+              "type": "improvement",
+              "scope": "cm",
+              "release": "patch"
+            },
+            {
+              "type": "imp",
+              "scope": "daily-js",
+              "release": "patch"
+            },
+            {
+              "type": "imp",
+              "scope": "dj",
+              "release": "patch"
+            },
+            {
+              "type": "imp",
+              "scope": "call-machine",
+              "release": "patch"
+            },
+            {
+              "type": "imp",
+              "scope": "cm",
+              "release": "patch"
+            },
+            {
+              "breaking": true,
+              "scope": "daily-js",
+              "release": "patch"
+            },
+            {
+              "breaking": true,
+              "scope": "call-machine",
+              "release": "patch"
+            },
+            {
+              "breaking": true,
+              "scope": "dj",
+              "release": "patch"
+            },
+            {
+              "breaking": true,
+              "scope": "cm",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/git"
+    ],
+    "tagFormat": "release-daily-js-${version}"
+  },
+  "author": "JuniorDooley",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattWunsch/cumqueut.git"
+  }
+}
